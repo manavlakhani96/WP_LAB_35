@@ -1,0 +1,77 @@
+ body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .radio-group {
+            margin-bottom: 15px;
+        }
+        .radio-group input[type="radio"] {
+            margin-right: 5px;
+        }
+        .radio-group label {
+            margin-right: 15px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        input:invalid, select:invalid, textarea:invalid {
+            border-color: #dc3545;
+        }
+        
+        input:valid, select:valid, textarea:valid {
+            border-color: #28a745;
+        }
+       
+        button:hover {
+            background-color: #0056b3;
+        }
+      
+        .radio-group input[type="radio"]:checked {
+            border-color: #007bff;
+            background-color: #e7f3ff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .radio-group input[type="radio"]:checked + label {
+            color: #007bff;
+        }
+    
+        input:first-of-type {
+            border-radius: 8px;
+        }
