@@ -1,0 +1,65 @@
+/* General Layout Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 400px;
+}
+
+.todo-list > li {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sub-item {
+    margin-top: 10px;
+}
+
+/* 4 & 14. Remove text decoration */
+.sub-item-link {
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* 5 & 15. Unvisited link color (Royal Blue) */
+.sub-item-link:link {
+    color: #2b6cb0;
+}
+
+/* 6 & 19. Visited link color (Purple) */
+.sub-item-link:visited {
+    color: #805ad5;
+}
+
+/* 7 & 16. Hover color (Orange) */
+.sub-item-link:hover {
+    color: #dd6b20;
+}
+
+/* 8 & 18. Focused outline (Deep Pink) */
+.sub-item-link:focus {
+    outline: 3px solid #ed64a6;
+    outline-offset: 4px;
+}
+
+/* 9 & 17. Clicked (Active) color (Bright Red) */
+.sub-item-link:active {
+    color: #e53e3e;
+}
+
+/* Label styling */
+label {
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-left: 8px;
+}
