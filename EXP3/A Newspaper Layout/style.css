@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@900&family=Inter:wght@400;700&display=swap');
+
+:root {
+  --ink: #1a1a1a;
+  --paper: #ffffff;
+  --accent: #111111;
+  --border: 1px solid #1a1a1a;
+}
+
+body {
+  background-color: #f4f4f4;
+  font-family: 'Libre Baskerville', serif;
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+.newspaper-layout {
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--paper);
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  
+  /* Grid Setup */
+  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: 
+    "title title title"
+    "feature-article feature-article cover-image"
+    "secondary-article secondary-article cover-image"
+    "small-article1 small-article2 small-article3";
+}
+
+/* Header & Typography */
+.title { 
+  grid-area: title; 
+  text-align: center;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.date-line {
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.title h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  margin: 0;
+  line-height: 1;
+}
+
+/* Article Styling */
+.category {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: #c00; /* Subtle editorial red */
+  display: block;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin: 0 0 15px 0;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin: 0 0 10px 0;
+}
+
+p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Grid Area Assignments */
+.feature-article { grid-area: feature-article; }
+.secondary-article { 
+  grid-area: secondary-article;
+  border-top: 1px solid #eee;
+  padding-top: 25px;
+}
+
+/* Image Styling */
+.cover-image { 
+  grid-area: cover-image; 
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cover-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+
+figcaption {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-style: italic;
+  margin-top: 8px;
+  color: #666;
+}
+
+/* Bottom Row Styling */
+[class^="small-article"] {
+  border-top: 3px solid var(--ink);
+  padding-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .newspaper-layout {
+    grid-template-areas: 
+      "title title title"
+      "cover-image cover-image cover-image"
+      "feature-article feature-article feature-article"
+      "secondary-article secondary-article secondary-article"
+      "small-article1 small-article2 small-article3";
+    gap: 30px;
+  }
+}
