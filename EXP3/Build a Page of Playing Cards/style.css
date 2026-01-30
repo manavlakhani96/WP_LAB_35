@@ -1,0 +1,188 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0f0f23;
+            background-image: 
+                radial-gradient(at 20% 30%, rgba(120, 119, 198, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 70%, rgba(255, 107, 107, 0.3) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(74, 207, 242, 0.3) 0px, transparent 50%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 3em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        #playing-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            width: 220px;
+            height: 320px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Card colors */
+        .card.red {
+            border: 3px solid #ff4757;
+        }
+
+        .card.black {
+            border: 3px solid #2f3542;
+        }
+
+        .card.blue {
+            border: 3px solid #5352ed;
+        }
+
+        .card.green {
+            border: 3px solid #2ed573;
+        }
+
+        .card.purple {
+            border: 3px solid #a55eea;
+        }
+
+        .card.orange {
+            border: 3px solid #ff6348;
+        }
+
+        .left {
+            align-self: flex-start;
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .middle {
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex: 1;
+            max-height: 100%;
+        }
+
+        .right {
+            align-self: flex-end;
+            font-size: 1.2em;
+            font-weight: bold;
+            transform: rotate(180deg);
+            line-height: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+        }
+
+        /* Suit symbols */
+        .suit {
+            font-size: 2em;
+            line-height: 1;
+        }
+
+        .hearts, .diamonds {
+            color: #ff4757;
+        }
+
+        .spades, .clubs {
+            color: #2f3542;
+        }
+
+        .stars {
+            color: #5352ed;
+        }
+
+        .crowns {
+            color: #a55eea;
+        }
+
+        .coins {
+            color: #ff6348;
+        }
+
+        .gems {
+            color: #2ed573;
+        }
+
+        /* Rank styling */
+        .rank {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1em;
+        }
+
+        /* Pattern in middle */
+        .pattern {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 80px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: currentColor;
+        }
